@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+}
+
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px green;
+    height: 100vh;
+}
+
+.child {
+    border: solid 1px gray;
+}
