@@ -1,0 +1,22 @@
+.MainContentItem {
+    width: 250px;
+    min-height: 300px;
+    max-height: 300px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+}
+
+.MainContentItemImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    margin: 10px;
+    object-fit: cover;
+}
+

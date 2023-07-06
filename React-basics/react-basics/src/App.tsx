@@ -1,14 +1,14 @@
-import Topbar from "./components/TopBar/Topbar";
-import Footer from "./components/Footer/Footer";
-import MainContent from "./components/MainContent/MainContent";
+import './index.css';
+import HomePage from './pages/homepage/HomePage';
+import LoginPage from './pages/loginPage/LoginPage';
 
 function App() {
   return (
     <>
-    <Topbar/>
-    <Footer/>
-    <MainContent/>
+      <HomePage/>
+      <LoginPage/>
     </>
+    
   );
 }
 
