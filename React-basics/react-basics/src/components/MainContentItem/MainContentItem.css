@@ -10,6 +10,7 @@
     flex-direction: column;
     background-color: white;
     padding: 20px;
+    position: relative;
 }
 
 .MainContentItemImage {
@@ -20,3 +21,9 @@
     object-fit: cover;
 }
 
+.MainContentItemIcon {
+    width: 25px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
