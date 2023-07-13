@@ -1,0 +1,11 @@
+.ToDoListItem {
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+}
+
+.ToDoListItemCheckbox {
+    margin-left: 30px;
+    height: 15px;
+    width: 15px;
+}

@@ -1,0 +1,23 @@
+
+.SharedButton {
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
+    border: none;
+    font-size: 18px;
+    height: 37px;
+    padding: 0 11px;
+    text-align: center;
+    width: 200px;
+    font-weight: 500;
+    color: #0F1111;
+    
+}
+
+.SharedButton:hover {
+    background: #C1BDAB;
+    border-color: #C1BDAB;
+    box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
+}
