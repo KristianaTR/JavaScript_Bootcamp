@@ -6,11 +6,10 @@ const ToDoForm = () => {
     const [input, setInput]: any = useState("");
     console.log(input);
     const [todoList, setTodoList]: any = useState([]);
+    const [todoText, settodoText]: any = useState('');
     // const [item, setItem]: any = useState("");
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setInput(e.target.value) 
-    };
+    
 
   return (
     <div className='ToDoForm'>
@@ -19,12 +18,12 @@ const ToDoForm = () => {
             className='ToDoFormInput' 
             type="text" 
             value= {input}
-            onChange={handleInputChange}
+            onChange={(event)=> settodoText(event.target.value)}
         />
         <Button
-            setItem={setInput}
             text="ADD"
             buttonColor= '#817F77'
+            
         />
     </div>
   )

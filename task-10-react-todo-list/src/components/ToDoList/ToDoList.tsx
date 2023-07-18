@@ -1,20 +1,27 @@
 import './ToDoList.css';
 import ToDoListItem from '../ToDoListItem/ToDoListItem';
+import { ITodoListItem } from "../../types/index";
 import { useState } from 'react';
+import { useEffect } from 'react';
 
 const ToDoList = () => {
-    const [item, setItem]: any = useState("");
-    console.log(item);
-    // const [state, setState]: any = useState(0);
-    // console.log(state);
+    const [todos, setTodos]: any = useState<ITodoListItem[]>([]);
+    console.log(todos);
+    const [remainingItems, setRemainingItems] = useState(0);
+    const [text, setText] = useState<ITodoListItem>({
+      input: "",
+      isChecked: false,
+    });
+
+    useEffect(()=> {
+      const remainingItems = todos.filter((todo) => !todo.isChecked).lenght;
+      setRemainingItems(remainingItems);
+    })
 
   return (
     <div className='ToDoList'>
-        <h2>You have {item} listed items:</h2>
-        <ToDoListItem 
-            text='This is manualy entered text'
-            id= '1'
-        />
+        <h2>You have {remainingItems} listed items:</h2>
+        <ToDoListItem todos={todos} setTodos={setTodos}/>
     </div>
   )
 }

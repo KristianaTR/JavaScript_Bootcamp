@@ -1,18 +1,29 @@
 import './Button.css';
-import React, { SetStateAction } from "react";
+import { useState } from 'react';
+import { ITodoListItem } from "../../../types/index";
 
-interface ButtonProps {
-    text?: string;
-    buttonColor?: '#817F77' | '#FFCD2B';
-    setItem: React.Dispatch<SetStateAction<string>>;
+const ToDoList = () => {
+  const [todos, setTodos] = useState<ITodoListItem[]>([]);
+  const [text, setText] = useState<ITodoListItem>({
+    input: "",
+    isChecked: false,
+  })
+  interface ButtonProps {
+      text?: string;
+      buttonColor?: '#817F77' | '#FFCD2B';
+  }
+  
+  const Button = ({text, buttonColor}: ButtonProps) => {
+    const handleOnClick = () => {
+      setTodos([...todos, text]); 
+    };
 }
 
-const Button = ({text, buttonColor, setItem}: ButtonProps) => {
   return (
     <button 
         className='SharedButton'
         style={buttonColor ? {backgroundColor: buttonColor} : {backgroundColor: '#817F77' }}
-        onClick={()=> console.log('Button clicked!')}
+        onClick={handleOnClick}
         
     
     > {text} </button>

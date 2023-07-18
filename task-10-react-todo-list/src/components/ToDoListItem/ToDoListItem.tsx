@@ -1,24 +1,27 @@
+import { ITodoListItem } from "../../types/index";
 import './TodoListItem.css';
-import { useState } from "react";
 
 interface ToDoListItemProps {
-    text?: string;
-    id?: string;
+    todos: ITodoListItem[];
+    setTodos: any;
 }
 
-const ToDoListItem = ({text, id}: ToDoListItemProps) => {
-    // const [item, setItem]: any = useState("");
-
+const ToDoListItem = ({todos, setTodos}: ToDoListItemProps) => {
+   
   return (
-    <ul className='ToDoListItem'>
-        <li>
-            {text}
-        </li>
-        <input 
-            className='ToDoListItemCheckbox'   
-            type="checkbox" 
-            onChange={()=> console.log('Checkbox checked!')}
-        />
+    <ul >
+        {todos.map((todo, index) => (
+            <div className='ToDoListItem'>
+                <li>
+                    {todo.input}
+                </li>
+                <input 
+                    className='ToDoListItemCheckbox'   
+                    type="checkbox" 
+                    onClick={()=> console.log('Checkbox checked!')}
+                />
+            </div>
+        ))}
     </ul>
     
   )
